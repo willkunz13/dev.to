@@ -1,0 +1,8 @@
+<div class="dashboard-analytics-header-wrapper">
+  <div class="dashboard-analytics-header loaded">
+    <img src="<%= asset_path "emoji/emoji-one-heart.png" %>" /><img src="<%= asset_path "emoji/emoji-one-unicorn.png" %>" /><img src="<%= asset_path "emoji/emoji-one-bookmark.png" %>" /><span><%= number_with_delimiter(@articles.sum(&:positive_reactions_count), delimeter: ",") %></span>
+  </div>
+  <div class="dashboard-analytics-header" id="dashboard-analytics-header">
+    <img id="dashboard-analytics-image" src="<%= asset_path "emoji/apple-eyes.png" %>" /><span><%= number_with_delimiter(@articles.sum(&:positive_reactions_count), delimeter: ",") %></span>
+  </div>
+</div>

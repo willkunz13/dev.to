@@ -23,14 +23,7 @@
 <% end %>
   <% if @user.org_admin && @user.organization && params[:which] == "organization" %>
       <% if current_user.can_view_analytics? %>
-      <div class="dashboard-analytics-header-wrapper">
-        <div class="dashboard-analytics-header loaded">
-          <img src="<%= asset_path "emoji/emoji-one-heart.png" %>" /><span><%= number_with_delimiter(@articles.sum(&:positive_reactions_count), delimeter: ",") %> Total Post Reactions</span>
-        </div>
-        <div class="dashboard-analytics-header" id="dashboard-analytics-header">
-          <img id="dashboard-analytics-image" src="<%= asset_path "emoji/apple-eyes.png" %>" /><span id="dashboard-analytics">Loading Views Data...</span>
-        </div>
-      </div>
+        <%= render "analytics" %>
       <% end %>
       <% @articles.each do |article| %>
         <div class="single-article">
@@ -67,14 +60,7 @@
     <% end %>
   <% elsif @articles.any? %>
     <% if current_user.can_view_analytics? %>
-      <div class="dashboard-analytics-header-wrapper">
-        <div class="dashboard-analytics-header loaded">
-          <img src="<%= asset_path "emoji/emoji-one-heart.png" %>" /><span><%= number_with_delimiter(@articles.sum(&:positive_reactions_count), delimeter: ",") %> Total Post Reactions</span>
-        </div>
-        <div class="dashboard-analytics-header" id="dashboard-analytics-header">
-          <img id="dashboard-analytics-image" src="<%= asset_path "emoji/apple-eyes.png" %>" /><span id="dashboard-analytics">Loading Views Data...</span>
-        </div>
-      </div>
+      <%= render "analytics" %>
     <% end %>
     <% if current_user.has_role?(:video_permission) %>
       <a class="video-upload-cta" href="/videos/new" data-no-instant>

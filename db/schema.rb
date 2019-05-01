@@ -10,10 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_141654) do
-
+ActiveRecord::Schema.define(version: 2019_05_01_180125) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
 
   create_table "ahoy_messages", id: :serial, force: :cascade do |t|
@@ -243,10 +241,10 @@ ActiveRecord::Schema.define(version: 2019_05_01_141654) do
     t.bigint "organization_id"
     t.text "processed_html"
     t.boolean "published"
+    t.string "slug"
     t.string "title"
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.string "slug"
     t.index ["organization_id"], name: "index_classified_listings_on_organization_id"
     t.index ["user_id"], name: "index_classified_listings_on_user_id"
   end
@@ -544,6 +542,7 @@ ActiveRecord::Schema.define(version: 2019_05_01_141654) do
     t.string "cta_button_text"
     t.string "cta_button_url"
     t.text "cta_processed_html"
+    t.string "dark_nav_image"
     t.string "email"
     t.string "github_username"
     t.boolean "is_gold_sponsor", default: false

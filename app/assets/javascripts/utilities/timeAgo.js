@@ -25,15 +25,23 @@ function secondsToHumanUnitAgo(seconds) {
   return wholeUnits + ' ' + unitName + ' ago';
 }
 
-function timeAgo(oldTimeInSeconds, maxDisplayedAge = 60 * 60 * 24 - 1) {
+function timeAgo({
+  oldTimeInSeconds,
+  formatter = humanTime =>
+    `<span class="time-ago-indicator">(${humanTime})</span>`,
+  maxDisplayedAge = 60 * 60 * 24 - 1,
+}) {
   const timeNow = new Date() / 1000;
   const diff = Math.round(timeNow - oldTimeInSeconds);
 
   if (diff > maxDisplayedAge) return '';
 
-  return (
-    "<span class='time-ago-indicator'>(" +
-    secondsToHumanUnitAgo(diff) +
-    ')</span>'
-  );
+  return formatter(secondsToHumanUnitAgo(diff));
+}
+
+// This is just for Storybook.
+// TODO: Longterm, this should be a utility function that can be imported.
+// For the time being, duplication of this function is being avoided.
+if (typeof window !== 'undefined') {
+  window.timeAgo = timeAgo;
 }

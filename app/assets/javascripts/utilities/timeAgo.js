@@ -39,9 +39,9 @@ function timeAgo({
   return formatter(secondsToHumanUnitAgo(diff));
 }
 
-// This is just for Storybook.
-// TODO: Longterm, this should be a utility function that can be imported.
+// TODO: This is for Storybook/jest.
+// Longterm, this should be a utility function that can be imported.
 // For the time being, duplication of this function is being avoided.
-if (typeof window !== 'undefined') {
-  window.timeAgo = timeAgo;
+if (typeof globalThis !== 'undefined') {
+  globalThis.timeAgo = timeAgo; // eslint-disable-line no-undef
 }

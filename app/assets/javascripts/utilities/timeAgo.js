@@ -25,6 +25,17 @@ function secondsToHumanUnitAgo(seconds) {
   return wholeUnits + ' ' + unitName + ' ago';
 }
 
+/**
+ * Returns a given time in seconds as a human readable form, e.g. (5 min ago)
+ *
+ * @param {object} options
+ * @param {number} options.oldTimeInSeconds
+ * @param {function} [(humanTime) =>
+      `<span class="time-ago-indicator">(${humanTime})</span>`] options.formatter
+ * @param {number} [60 * 60 * 24 - 1] options.maxDisplayedAge The maximum display age in seconds
+ *
+ * @returns {string} A formatted string in human readable form. Note that the default formatter returns a string with markup in it.
+ */
 function timeAgo({
   oldTimeInSeconds,
   formatter = humanTime =>

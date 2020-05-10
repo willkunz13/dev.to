@@ -75,5 +75,7 @@ docker_data/
 
 # Ignore elasticsearch stuff
 elasticsearch-oss-7.5.2-darwin-x86_64.tar.gz
-elasticsearch-7.5.2/*
+/elasticsearch-7.5.2/*
 elasticsearch-oss-7.5.2-darwin-x86_64.tar.gz.sha512
+/elasticsearch-oss-7.5.2-darwin-x86_64.tar.gz
+/elasticsearch-oss-7.5.2-darwin-x86_64.tar.gz.sha512

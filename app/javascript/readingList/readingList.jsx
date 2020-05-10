@@ -49,10 +49,22 @@ export class ReadingList extends Component {
     this.clearSelectedTags = clearSelectedTags.bind(this);
   }
 
+  // Possibly reuse this component to render different Collections.
+  // Based on the amount of collections, I could potentially map over the
+  // Collection data to render different readingLists as collections.
+
   componentDidMount() {
     const { hitsPerPage, statusView } = this.state;
 
+    // This is where the search pulls the correct data.
+    // Could dynamically create values here for each collection when mapping
+    // over collection data.
     this.performInitialSearch({
+      // Parameters object that is used for creating initialSearch:
+      // Is this containerId associated to a DataTable? Or is this
+      // HTML container?
+      // Unsure of how to modify this to grab our collections and associated
+      // articles.
       containerId: 'reading-list',
       indexName: 'SecuredReactions',
       searchOptions: {
@@ -175,6 +187,11 @@ export class ReadingList extends Component {
 
     const archiveButtonLabel = isStatusViewValid ? 'archive' : 'unarchive';
     const itemsToRender = items.map(item => {
+      // Unsure of how these items actually get pulled.
+      // Looking at performInitialSearch() it is not clear how the readingList
+      // Items are actually gathered.
+      // This is make me unsure of how to repopulate this data for articles that
+      // will be within our new Collections table.
       return (
         <ItemListItem item={item}>
           <ItemListItemArchiveButton

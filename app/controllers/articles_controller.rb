@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
   include ApplicationHelper
 
-  before_action :authenticate_user!, except: %i[feed new]
+  # Devise actions realted to user Authentication
+  # Each of these are calling helper functions that happen before the controller runs
+  before_action :authenticate_user!, except: %i[feed new] # can only use feed/new when not logged in as a user
   before_action :set_article, only: %i[edit manage update destroy stats]
   before_action :raise_suspended, only: %i[new create update]
   before_action :set_cache_control_headers, only: %i[feed]
@@ -235,6 +237,8 @@ class ArticlesController < ApplicationController
     @articles = @articles.cached_tagged_with(@tag)
   end
 
+  # This method finds an article based on user and organization for
+  # prepocessing in before_action call.
   def set_article
     owner = User.find_by(username: params[:username]) || Organization.find_by(slug: params[:username])
     found_article = if params[:slug] && owner

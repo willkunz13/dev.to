@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   namespace :internal do
     get "/", to: redirect("/internal/articles")
 
+    # CRUD for collections
+
     resources :articles, only: %i[index show update]
     resources :broadcasts, only: %i[index new create edit update]
     resources :buffer_updates, only: %i[create update]
@@ -412,6 +414,8 @@ Rails.application.routes.draw do
   get "/:username/:slug" => "stories#show"
   get "/:username" => "stories#index"
 
+  # Add CRUD routes for collections
+  # Ruby route creation for collection Create, Read, Update and Destroy
   root "stories#index"
 end
 

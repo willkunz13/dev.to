@@ -69,6 +69,9 @@ export function performInitialSearch({
 
   const index = setupAlgoliaIndex({ containerId, indexName });
 
+  // what is index? How does it know to grab the readingList articles in
+  // this case?
+  // Is this what is actually fetching the readingList articles/items?
   index.search('', searchOptions).then(result => {
     component.setState({
       items: result.hits,

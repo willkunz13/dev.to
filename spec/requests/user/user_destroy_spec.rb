@@ -98,6 +98,7 @@ RSpec.describe "UserDestroy", type: :request do
 
   describe "GET /users/confirm_destroy" do
     let(:token) { SecureRandom.hex(10) }
+		let(:article) { create(:article, user_id: user.id) }	
 
     context "with user signed in" do
       before do

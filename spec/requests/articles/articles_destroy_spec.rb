@@ -8,7 +8,7 @@ RSpec.describe "ArticlesDestroy", type: :request do
     sign_in user
   end
 
-  it "destroyes an article" do
+  it "destroys an article" do
     delete "/articles/#{article.id}"
     destroyed_article = Article.find_by(id: article.id)
     expect(destroyed_article).to be_nil
@@ -34,4 +34,10 @@ RSpec.describe "ArticlesDestroy", type: :request do
       delete "/articles/#{article2.id}"
     end.to raise_error(Pundit::NotAuthorizedError)
   end
+
+	it "destroying user destroys articles" do
+		article.save
+		User.first.destroy
+		expect(Article.all.size).to eq(0)
+	end
 end

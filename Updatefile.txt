@@ -1,4 +1,4 @@
 config/routes.rb
-views/articles/show.html.erb
 views/articles/_sidebar.html.erb
 db/schema.rb
+controllers/reading_list_items_controller.rb

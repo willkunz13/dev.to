@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_214321) do
+ActiveRecord::Schema.define(version: 2020_05_11_211611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -719,6 +719,19 @@ ActiveRecord::Schema.define(version: 2020_02_27_214321) do
     t.index ["slug"], name: "index_pages_on_slug", unique: true
   end
 
+  create_table "parlaiment_articles", force: :cascade do |t|
+    t.bigint "article_id"
+    t.bigint "parlaiment_id"
+    t.index ["article_id"], name: "index_parlaiment_articles_on_article_id"
+    t.index ["parlaiment_id"], name: "index_parlaiment_articles_on_parlaiment_id"
+  end
+
+  create_table "parlaiments", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_parlaiments_on_user_id"
+  end
+
   create_table "podcast_episodes", id: :serial, force: :cascade do |t|
     t.boolean "any_comments_hidden", default: false
     t.text "body"
@@ -1224,6 +1237,9 @@ ActiveRecord::Schema.define(version: 2020_02_27_214321) do
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "users", column: "resource_owner_id"
   add_foreign_key "page_views", "articles", on_delete: :cascade
+  add_foreign_key "parlaiment_articles", "articles"
+  add_foreign_key "parlaiment_articles", "parlaiments"
+  add_foreign_key "parlaiments", "users"
   add_foreign_key "podcasts", "users", column: "creator_id"
   add_foreign_key "sponsorships", "organizations"
   add_foreign_key "sponsorships", "users"

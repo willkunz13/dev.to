@@ -17,8 +17,10 @@
   <meta name="twitter:description" content="Reading List for dev.to">
 <% end %>
 
+<!-- This container generates a placeholder to insert the readingLists component -->
 <div class="home">
   <div class="item-list-container" id="reading-list" data-algolia-key="<%= @secured_algolia_key %>" data-view="<%= @view %>">
   </div>
 </div>
+<!-- This javascript_pact_tag inserts the readingList component -->
 <%= javascript_pack_tag "readingList", defer: true %>

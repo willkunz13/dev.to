@@ -30,8 +30,8 @@ RSpec.describe Article, type: :model do
     it { is_expected.not_to allow_value("foo").for(:main_image_background_hex_color) }
 
     # mod 4 contribution
-    it { is_expected.to have_many(:parlaiment_articles) }
-    it { is_expected.to have_many(:parlaiments).through(:parlaiment_articles) }
+    it { is_expected.to have_many(:collection_list_articles) }
+    it { is_expected.to have_many(:collection_lists).through(:collection_list_articles) }
 
     context "when published" do
       before do

@@ -35,6 +35,9 @@ RSpec.describe User, type: :model do
       it { is_expected.to have_one(:pro_membership).dependent(:destroy) }
       it { is_expected.to have_one(:counters).dependent(:destroy) }
 
+      ## Mod4 contribution
+      it { is_expected.to have_many(:parlaiments) }
+
       # rubocop:disable RSpec/NamedSubject
       it "has created_podcasts" do
         expect(subject).to have_many(:created_podcasts).

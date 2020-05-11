@@ -52,6 +52,7 @@ export class ReadingList extends Component {
   componentDidMount() {
     const { hitsPerPage, statusView } = this.state;
 
+    // This is where the search pulls the correct data.
     this.performInitialSearch({
       containerId: 'reading-list',
       indexName: 'SecuredReactions',

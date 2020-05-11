@@ -18,3 +18,5 @@ RSpec.describe "Reading list", type: :system do
     end
   end
 end
+
+# This test will need to be augmented and expanded to handle new functionality coming in from collections

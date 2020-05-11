@@ -202,7 +202,7 @@ Rails.application.routes.draw do
     get "purchase", on: :collection, to: "credits#new"
   end
   resources :buffer_updates, only: [:create]
-  resources :reading_list_items, only: [:update]
+  resources :reading_list_items, only: [:update] # directs to the update method in the raeding_list_items controller
   resources :poll_votes, only: %i[show create]
   resources :poll_skips, only: [:create]
   resources :profile_pins, only: %i[create update]
@@ -362,6 +362,8 @@ Rails.application.routes.draw do
 
   get "/pod", to: "podcast_episodes#index"
   get "/podcasts", to: redirect("pod")
+
+  # directs to reading list uri, reading_list_items controller and the index action, probably for render
   get "/readinglist" => "reading_list_items#index"
   get "/readinglist/:view" => "reading_list_items#index", :constraints => { view: /archive/ }
 
@@ -412,6 +414,10 @@ Rails.application.routes.draw do
   get "/:username/:slug" => "stories#show"
   get "/:username" => "stories#index"
 
+  # CRUD routes for collections
+  # Ruby route creation for collection Create, Read, Update and Destroy
+  # each action can then be routed towards the reading list, but we will need routes
+  # related to the new tables we will create
   root "stories#index"
 end
 

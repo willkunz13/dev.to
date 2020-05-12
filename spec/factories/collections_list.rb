@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :collection_list do
+  factory :collections_list do
     user
   end
 end

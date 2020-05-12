@@ -14,7 +14,7 @@ gem "activerecord-import", "~> 1.0" # Adds ability to bulk create activerecord o
 gem "acts-as-taggable-on", "~> 6.5" # A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts
 gem "acts_as_follower", github: "thepracticaldev/acts_as_follower", branch: "master" # Allow any model to follow any other model
 gem "addressable", "~> 2.7" # A replacement for the URI implementation that is part of Ruby's standard library
-gem "administrate", "~> 0.12" # A Rails engine that helps you put together a super-flexible admin dashboard
+gem "administrate", "~> 0.13" # A Rails engine that helps you put together a super-flexible admin dashboard
 gem "ahoy_email", "~> 1.1" # Email analytics for Rails
 gem "algoliasearch-rails", "~> 1.24" # Algolia Search is a hosted search engine capable of delivering real-time results from the first keystroke
 gem "algorithmia", "~> 1.1" # Ruby Client for Algorithmia Algorithms and Data API
@@ -31,7 +31,7 @@ gem "counter_culture", "~> 2.3" # counter_culture provides turbo-charged counter
 gem "ddtrace", "~> 0.32.0" # ddtrace is Datadog’s tracing client for Ruby.
 gem "devise", "~> 4.7" # Flexible authentication solution for Rails
 gem "dogstatsd-ruby", "~> 4.7" # A client for DogStatsD, an extension of the StatsD metric server for Datadog
-gem "doorkeeper", "~> 5.3" # Oauth 2 provider
+gem "doorkeeper", "~> 5.3.2" # Oauth 2 provider
 gem "dry-struct", "~> 1.2" # Typed structs and value objects
 gem "elasticsearch", "~> 7.4" # Powers DEVs core search functionality
 gem "email_validator", "~> 2.0" # Email validator for Rails and ActiveModel
@@ -65,7 +65,7 @@ gem "omniauth", "~> 1.9" # A generalized Rack framework for multiple-provider au
 gem "omniauth-github", "~> 1.3" # OmniAuth strategy for GitHub
 gem "omniauth-twitter", "~> 1.4" # OmniAuth strategy for Twitter
 gem "pg", "~> 1.2" # Pg is the Ruby interface to the PostgreSQL RDBMS
-gem "puma", "~> 4.3" # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server
+gem "puma", "~> 4.3.3" # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server
 gem "pundit", "~> 2.1" # Object oriented authorization for Rails applications
 gem "pusher", "~> 1.3" # Ruby library for Pusher Channels HTTP API
 gem "pusher-push-notifications", "~> 1.1" # Pusher Push Notifications Ruby server SDK

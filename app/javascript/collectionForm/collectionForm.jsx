@@ -1,6 +1,6 @@
 import { h } from 'preact';
 
-export class CollectionForm extends h {
+class CollectionForm extends h {
   constructor() {
     super();
     this.state = {
@@ -35,3 +35,5 @@ export class CollectionForm extends h {
     );
   }
 }
+
+export default CollectionForm;

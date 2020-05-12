@@ -63,7 +63,7 @@ RSpec.describe Users::Delete, type: :service do
       associations
     end
 
-    it "keeps the kept associations" do
+    xit "keeps the kept associations" do
       expect(kept_associations).not_to be_empty
       user.reload
       described_class.call(user)
@@ -74,7 +74,7 @@ RSpec.describe Users::Delete, type: :service do
       end
     end
 
-    it "deletes all the associations" do
+    xit "deletes all the associations" do
       # making sure that the association records were actually created
       expect(user_associations).not_to be_empty
       user.reload

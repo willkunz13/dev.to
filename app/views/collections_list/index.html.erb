@@ -1,3 +1,5 @@
-<% @collection_list.each do |collection| %>
-  <%= collection.name %>
-<% end %>
+<div class="home">
+  <div class="item-list-container" id="collection-list">
+  </div>
+</div>
+<%= javascript_pack_tag "collectionList", defer: true %>

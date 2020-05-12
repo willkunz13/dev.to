@@ -30,6 +30,10 @@ class Article < ApplicationRecord
   has_many :rating_votes
   has_many :page_views
 
+  # Mod 4 Contributions
+  has_many :collection_list_articles
+  has_many :collection_lists, through: :collection_list_articles
+
   validates :slug, presence: { if: :published? }, format: /\A[0-9a-z\-_]*\z/,
                    uniqueness: { scope: :user_id }
   validates :title, presence: true,

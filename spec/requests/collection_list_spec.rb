@@ -17,4 +17,13 @@ RSpec.describe "Collection List Items", type: :request do
       expect(response.body).to include(collection.name)
     end
   end
+
+  describe "POST collection list" do
+    it "can create a new collection" do
+      expect(CollectionList.first).to eq(nil)
+      post "/collections_list", params: { collections_list: { name: "New list" } }
+
+      expect(CollectionList.first.name).to eq("New list")
+    end
+  end
 end

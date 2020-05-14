@@ -26,19 +26,17 @@ export default class CollectionForm extends Component {
       },
       body: JSON.stringify({ name: collectionTitle }),
       credentials: 'same-origin',
-    })
-      .then(res => res.json())
-      .then(data => console.log(data));
+    });
+    // .then(res => res.json())
+    // .then(data => console.log(data));
   };
 
   validateForm = () => {
     const { collectionTitle } = this.state;
-    console.log('collectionTitle', collectionTitle);
     if (collectionTitle === '') {
       return true;
-    } 
-      return false;
-    
+    }
+    return false;
   };
 
   render() {

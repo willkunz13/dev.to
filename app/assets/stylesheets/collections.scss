@@ -1,0 +1,36 @@
+@import 'variables';
+@import '_mixins';
+
+.collections-wrapper {
+  header {
+    text-align: center;
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        padding: 6px;
+        margin-right: 10px;
+        border-radius: 3px;
+        background-color: #e8e7e7;
+        border: 0;
+        min-width: 200px;
+        font-size: 0.775rem;
+      }
+
+      button {
+        font-size: 0.925rem;
+        border: 2px solid #000;
+
+        &:disabled {
+          background-color: #d4d4d4;
+          color: #a19e9e;
+          border-color: #d4d4d4;
+          cursor: no-drop;
+        }
+      }
+    }
+  }
+}

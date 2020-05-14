@@ -367,6 +367,7 @@ Rails.application.routes.draw do
 
   ## collections
   get "/collections_list" => "collections_list#index", :as => :collections_list
+  post "/collections_list" => "collections_list#create"
 
   get "/feed" => "articles#feed", :as => "feed", :defaults => { format: "rss" }
   get "/feed/tag/:tag" => "articles#feed",

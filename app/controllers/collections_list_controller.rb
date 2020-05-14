@@ -4,4 +4,8 @@ class CollectionsListController < ApplicationController
   def index
     @collection_list = CollectionList.where(user: current_user)
   end
+
+  def create
+    # require 'pry'; binding.pry
+  end
 end

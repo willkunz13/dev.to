@@ -4,7 +4,6 @@ class CollectionsListController < ApplicationController
   def index
     collection_list = CollectionList.where(user: current_user)
     @collection_list = CompleteCollectionList.new(collection_list).to_json
-    # binding.pry
   end
 
   def create

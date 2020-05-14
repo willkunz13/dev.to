@@ -26,4 +26,21 @@ RSpec.describe "Collection List Items", type: :request do
       expect(CollectionList.first.name).to eq("New list")
     end
   end
+
+  describe "PATCH collection list" do
+    it "can add articles to collection" do
+      collection = CollectionList.new(name: "A new parliament name", user: user)
+      collection.save!
+
+      expect(collection.articles).to eq([])
+
+      patch "/collections_list", params: {
+        article_id: article.id,
+        collection_id: collection.id
+      }
+
+      collection.reload
+      expect(collection.articles.last).to eq(article)
+    end
+  end
 end

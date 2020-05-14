@@ -10,4 +10,13 @@ class CollectionsListController < ApplicationController
     CollectionList.create(name: params["collections_list"]["name"], user: current_user)
     redirect_back(fallback_location: root_path)
   end
+
+  def update
+    collection = CollectionList.find(params[:collection_id])
+    article = Article.find(params[:article_id])
+
+    collection.articles << article
+
+    collection.save
+  end
 end

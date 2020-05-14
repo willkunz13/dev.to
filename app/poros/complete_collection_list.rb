@@ -1,11 +1,12 @@
 class CompleteCollectionList
   attr_reader :data
   def initialize(collectionlists)
-    @data = sorter
+    @data = sorter(collectionlists)
   end
-  def sorter
+
+  def sorter(collectionlists)
     collectionlists.map do |collection|
-      collection = CompleteCollection.new(collection)
+      CompleteCollection.new(collection)
     end
   end
 end

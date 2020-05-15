@@ -34,3 +34,36 @@
     }
   }
 }
+
+#collection-container {
+  section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto 0;
+
+    article {
+      font-size: 17px;
+      border-radius: 3px;
+      margin-bottom: 30px;
+      border: 1px solid #d6d5d5;
+
+      header {
+        padding: 17px;
+        font-size: 1.8em;
+        font-weight: bold;
+        background-color: #eff1f2;
+
+        h3 {
+          margin: 0;
+          font-size: 1.6rem;
+        }
+      }
+
+      ul {
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+  }
+}

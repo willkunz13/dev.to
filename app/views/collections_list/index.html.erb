@@ -14,6 +14,9 @@
   <meta name="twitter:title" content="Reading List - <%= community_qualified_name %>">
   <meta name="twitter:description" content="Reading List for dev.to">
 <% end %>
-<div id="collection-list" data-collections="<%= @collection_list %>">
+  <div id="collection-list" data-collections="<%= @collection_list %>">
 </div>
 <%= javascript_pack_tag "collectionList", defer: true %>
+<div id="collection-container" data-collections="<%= @collection_list %>"></div>
+
+<%= javascript_pack_tag "collectionContainer", defer: true %>

@@ -166,7 +166,8 @@
             <% end %>
           </div>
         <% end %>
-        <div>Add to Collections</div>
+        <div id="add-to-collection" data-articleid="<%= @article.id %>" data-collections="<%= current_user.collection_lists.to_json %>"></div>
+        <%= javascript_pack_tag "addToCollection", defer: true %>
       </header>
       <% if @article.collection_id %>
         <%= render "articles/collection", position: "top" %>

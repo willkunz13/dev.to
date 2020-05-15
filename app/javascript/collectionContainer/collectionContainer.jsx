@@ -6,7 +6,10 @@ export const CollectionContainer = ({ collections }) => {
 
   const getArticles = articles => {
     if (articles.length !== 0) {
-      return articles.map(article => <li>{article.name}</li>);
+      return articles.map(article => {
+        let urlPath = article.path
+        return (<li><a href={urlPath}>{article.title}</a></li>);
+      });
     }
     return <li>No articles in this collection.</li>;
   };

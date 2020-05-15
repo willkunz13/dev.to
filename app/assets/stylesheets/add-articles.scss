@@ -1,0 +1,58 @@
+@import 'variables';
+@import '_mixins';
+
+.add-article-container {
+  margin-top:20px;
+  position:relative;
+
+  button {
+    padding:8px;
+    display: flex;
+    align-items: center;
+    background-color:transparent;
+    font-size:.925rem;
+    border:2px solid #000;
+
+    img {
+      max-width:14px;
+      margin-right:10px;
+    }
+  }
+
+  .collections-list {
+    background-color:#fff;
+    max-width:400px;
+    width:100%;
+    box-shadow:2px 2px 11px rgba(0,0,0,.16);
+    position:absolute;
+
+    ul {
+      padding:0px;
+      margin:0px;
+
+      li {
+        list-style-type:none;
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size:1rem;
+
+        img {
+          display:none;
+          margin-right:10px;
+        }
+
+        &:hover {
+          background-color:#f1f1f1;
+          cursor:pointer;
+          img {
+            display:block;
+            max-width:10px;
+          }
+        }
+      }
+    }
+  }
+
+}

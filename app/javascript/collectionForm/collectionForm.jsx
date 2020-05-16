@@ -5,6 +5,7 @@ export default class CollectionForm extends Component {
     super();
     this.state = {
       collectionTitle: '',
+      isValid: false,
     };
   }
 
@@ -34,13 +35,13 @@ export default class CollectionForm extends Component {
   validateForm = () => {
     const { collectionTitle } = this.state;
     if (collectionTitle === '') {
-      return true;
+      this.setState({ isValid: true });
     }
-    return false;
+    this.setState({ isValid: true });
   };
 
   render() {
-    const { collectionTitle } = this.state;
+    const { collectionTitle, isValid } = this.state;
     return (
       <div>
         <header>
@@ -57,7 +58,7 @@ export default class CollectionForm extends Component {
               className="cta"
               type="button"
               onClick={this.handleClick}
-              disabled={this.validateForm()}
+              disabled={!isValid}
             >
               Submit
             </button>
